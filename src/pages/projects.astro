@@ -21,14 +21,16 @@ const formatDate = (date: Date) =>
     </div>
     <div class="post-list">
       {projects.map((project) => (
-        <Card class="stack" href={`/projects/${project.slug}/`}>
+        <Card class="stack">
           <div class="post-meta">{formatDate(project.data.date)}</div>
-          <h3 class="card-title">{project.data.title}</h3>
+          <h3>
+            <a class="card-title" href={`/projects/${project.slug}/`}>{project.data.title}</a>
+          </h3>
           <p class="muted">{project.data.description}</p>
-          {project.data.tags && (
+          {project.data.links && (
             <div class="tags">
-              {project.data.tags.map((tag) => (
-                <span class="pill">{tag}</span>
+              {project.data.links.map((link) => (
+                <a class="pill" href={link.href}>{link.label}</a>
               ))}
             </div>
           )}

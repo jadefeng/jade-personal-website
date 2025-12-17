@@ -10,16 +10,12 @@ links:
     href: https://die-with-zero.jadefeng.com/
   - label: Repo
     href: https://github.com/jadefeng/die-with-zero
+
 ---
 ## Project Overview
 I grew up in an immigrant family where frugality was a core value, so saving always felt virtuous and spending required justification. Die With Zero resonated with me because of its idea of “experience compound interest”, where experiences earlier in life can deliver more long-term value than money saved for later, especially given that time and energy are finite. 
 
-The goal is to make the "die with zero" idea feel tangible. This app was my attempt to make those ideas more concrete by turning a philosophy into something you can sanity-check.
-
-Highlights:
-- Built a guided flow with clear milestones and a friendly tone.
-- Focused on clarity over knobs: a few inputs, one clear output.
-- Shipped fast to learn what people actually cared about.
+The goal of this project is to make the "die with zero" idea feel tangible. 
 
 --- 
 ## Project Steps 
