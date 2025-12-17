@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const thoughts = (await getCollection('thoughts')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+---
+
+<BaseLayout title="Thoughts — Jade Feng" description="Essays, notes, and thinking in progress.">
+  <section class="stack">
+    <div class="measure">
+      <p class="pill">Thoughts</p>
+      <h1>Thinking in progress</h1>
+      <p class="muted">Short essays and notes I want to reference later.</p>
+    </div>
+    <div class="post-list">
+      {thoughts.map((post) => (
+        <Card class="stack" href={`/thoughts/${post.slug}/`}>
+          <div class="post-meta">{formatDate(post.data.date)}</div>
+          <h3>{post.data.title}</h3>
+          <p class="muted">{post.data.description}</p>
+          {post.data.tags && (
+            <div class="tags">
+              {post.data.tags.map((tag) => (
+                <span class="pill">{tag}</span>
+              ))}
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

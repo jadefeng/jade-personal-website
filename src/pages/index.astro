@@ -1,16 +1,37 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
 
+const highlights = [
+  { title: 'See Projects', href: '/projects', blurb: 'Builds, PRDs, experiments, and public work in progress.' },
+  { title: 'Read Thoughts', href: '/thoughts', blurb: 'Short essays and notes I want to keep around.' },
+  { title: 'Book Notes', href: '/books', blurb: 'Reading log with takeaways worth revisiting.' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Jade Feng — Personal website">
+  <section class="hero">
+    <div class="stack measure">
+      <h1>Hi, I’m Jade.</h1>
+      <p>
+        I'm a product manager in San Francisco that loves to build thoughtful products, take tidy notes, and share what I learn.
+      </p>
+      <p class="muted">
+        This site is a home for my projects, writing, and the books that are shaping my thinking.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Find your way around</h2>
+    <div class="card-grid">
+      {highlights.map((item) => (
+        <Card class="stack" href={item.href}>
+          <div class="pill">{item.title}</div>
+          <p>{item.blurb}</p>
+        </Card>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

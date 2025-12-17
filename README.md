@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Jade’s Personal Website
+
+Built with Astro. Sections: home, projects, thoughts, books, and about. Posts are Markdown-based.
+
+## Project structure
+
+- `src/pages` — route files for pages and posts
+- `src/content` — Markdown sources for `thoughts` and `books`
+- `src/layouts` and `src/components` — layout + nav
+- `public` — static assets (favicon, etc.)
+
+## Run locally
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Visit `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Build for deployment
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npm run build
+npm run preview   # optional sanity check of the production build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The built site lives in `dist/`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Adding a new post
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Add a Markdown file to `src/content/thoughts/` or `src/content/books/`.
+2. Include frontmatter:
 
-## 🧞 Commands
+```md
+---
+title: Post title
+description: Short summary for feeds and listing cards
+date: 2024-01-05
+tags:
+  - optional
+---
 
-All commands are run from the root of the project, from a terminal:
+Your content here.
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+For book notes, add `author: Author Name` to the frontmatter.
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The slug comes from the filename, e.g. `src/content/thoughts/new-idea.md` becomes `/thoughts/new-idea/`. Posts
+automatically appear in listings.

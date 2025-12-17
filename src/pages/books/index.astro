@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const books = (await getCollection('books')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+---
+
+<BaseLayout title="Books — Jade Feng" description="Reading log and notes worth keeping.">
+  <section class="stack">
+    <div class="measure">
+      <p class="pill">Books</p>
+      <h1>Reading notes</h1>
+      <p class="muted">Highlights and takeaways that stuck with me.</p>
+    </div>
+    <div class="post-list">
+      {books.map((book) => (
+        <Card class="stack" href={`/books/${book.slug}/`}>
+          <div class="post-meta">
+            {book.data.author} · {formatDate(book.data.date)}
+          </div>
+          <h3>{book.data.title}</h3>
+          <p class="muted">{book.data.description}</p>
+          {book.data.tags && (
+            <div class="tags">
+              {book.data.tags.map((tag) => (
+                <span class="pill">{tag}</span>
+              ))}
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

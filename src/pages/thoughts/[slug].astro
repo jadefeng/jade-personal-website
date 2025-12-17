@@ -1,0 +1,43 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const thoughts = await getCollection('thoughts');
+  return thoughts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const post = await getEntryBySlug('thoughts', slug ?? '');
+
+if (!post) {
+  throw new Error(`Thought not found for slug: ${slug}`);
+}
+
+const { Content } = await post.render();
+const { data } = post;
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+---
+
+<BaseLayout title={`${data.title} — Thoughts`} description={data.description}>
+  <article class="stack measure">
+    <div>
+      <p class="pill">Thoughts</p>
+      <h1>{data.title}</h1>
+      <p class="post-meta">Published {formatDate(data.date)}</p>
+    </div>
+    <div class="prose">
+      <Content />
+    </div>
+    {data.tags && (
+      <div class="tags">
+        {data.tags.map((tag) => (
+          <span class="pill">{tag}</span>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>

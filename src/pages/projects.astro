@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+const projects = [
+  {
+    title: 'Die with Zero',
+    description: 'Calculate how much "fun money" you can truly enjoy each year to maximize life fulfillment, not just net worth.',
+    links: [
+      { label: 'App Link', href: 'https://die-with-zero.jadefeng.com/' },
+      { label: 'Repo', href: 'https://github.com/jadefeng/die-with-zero' },
+
+    ],
+  }
+];
+---
+
+<BaseLayout title="Projects — Jade Feng" description="Projects, prototypes, and experiments by Jade Feng.">
+  <section class="stack">
+    <div class="measure">
+      <p class="pill">Projects</p>
+      <h1>Things I’m building</h1>
+      <p class="muted">
+        A rotating set of experiments, shipped features, and playful prototypes. Links point to demos or
+        write-ups when available.
+      </p>
+    </div>
+    <div class="card-grid">
+      {projects.map((project) => (
+        <Card class="stack">
+          <h3 class="card-title">{project.title}</h3>
+          <p class="muted">{project.description}</p>
+          <div class="actions">
+            {project.links.map((link) => (
+              <a class="button" href={link.href}>{link.label}</a>
+            ))}
+          </div>
+        </Card>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
