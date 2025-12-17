@@ -22,10 +22,21 @@ const formatDate = (date: Date) =>
     <div class="post-list">
       {projects.map((project) => (
         <Card class="stack">
-          <div class="post-meta">{formatDate(project.data.date)}</div>
+          {project.data.overviewImage && (
+            <div class="project-card-media">
+              <img
+                src={project.data.overviewImage.src}
+                alt={project.data.overviewImage.alt ?? `${project.data.title} screenshot`}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
           <h3>
             <a class="card-title" href={`/projects/${project.slug}/`}>{project.data.title}</a>
           </h3>
+          <div >{formatDate(project.data.date)}</div>
+
           <p class="muted">{project.data.description}</p>
           {project.data.links && (
             <div class="tags">

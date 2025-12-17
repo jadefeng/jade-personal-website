@@ -3,7 +3,6 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 const { title = 'Jade Feng', description = 'Personal site and writing by Jade Feng.' } = Astro.props;
-const gaId = 'G-314JGPSG4Y';
 ---
 
 <!doctype html>
@@ -15,36 +14,6 @@ const gaId = 'G-314JGPSG4Y';
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
-    <script is:inline>
-      {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '${gaId}');
-
-document.addEventListener('click', (event) => {
-  const target = event.target instanceof Element ? event.target : null;
-  const link = target?.closest('a');
-  const button = target?.closest('button');
-
-  if (link) {
-    const href = link.getAttribute('href') || '';
-    gtag('event', 'link_click', {
-      link_url: href,
-      link_domain: link.host || '',
-      link_external: link.host && link.host !== location.host,
-    });
-    return;
-  }
-
-  if (button) {
-    const label = button.getAttribute('data-analytics-label') || 'button';
-    gtag('event', 'button_click', {
-      button_label: label,
-    });
-  }
-});`}
-    </script>
 
   
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
