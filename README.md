@@ -51,7 +51,7 @@ For projects, add optional links:
 ```md
 links:
   - label: Live site
-    href: https://example.com
+    href: https://jadefeng.com
 ```
 
 The slug comes from the filename, e.g. `src/content/thoughts/new-idea.md` becomes `/thoughts/new-idea/`. Posts
