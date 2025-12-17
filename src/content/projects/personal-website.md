@@ -27,9 +27,11 @@ I started this site as a home for the things I’m thinking about and building. 
 --- 
 ## Project Steps 
 1. Installed Codex and set up my environment
+
 I started by installing OpenAI Codex and using it directly in my editor/browser as a coding copilot. My hands-on coding experience was from 10 years ago (!!), so my goal was to rely on Codex for scaffolding, while I focused on intent and structure.
 
 2. Used a starter prompt to scaffold the site
+
 Rather than starting from a blank repo, I gave Codex a  prompt to generate a simple personal site using Astro. The prompt focused on:
 
 - a lightweight static setup
@@ -47,23 +49,27 @@ Include a footer that includes my social media links: LinkedIn, Github, X."_
 This gave me a working foundation without needing to understand every decision upfront.
 
 3. Explored Astro to understand the structure
+
 Once the site was generated, I spent time digging around Astro’s file structure:
 
-- src/pages to understand routing
-- src/content to see how posts were organized
-- public/ for static assets like images
+- _src/pages_ to understand routing
+- _src/content_ to see how posts were organized
+- _public/_ for static assets like images
 
 This helped me build a mental model of how content flows into pages.
 
 4. Iterated on design and layout with Codex
+
 After the basics were in place, I used Codex to restyle the site based on a mood board that I grabbed from Pinterest — focusing on typography, spacing, color, and overall tone. 
 
 I treated Codex more like a design translator than a code generator, describing how I wanted the site to feel rather than how it should be implemented.
 
 5. Set up hosting and deployment
-I connected the project to GitHub and deployed it using a static hosting provider (Vercel), which automatically builds and publishes the site on every push. This made updates low-effort and removed the need to manage servers.
+
+I connected the project to GitHub and deployed it using a static hosting provider (Vercel), which automatically builds and publishes the site on every push.  
 
 6. Established a simple content workflow
+
 Finally, I set up a repeatable workflow:
 
 - write posts in Markdown
