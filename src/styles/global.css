@@ -2,18 +2,18 @@
 
 :root {
   color-scheme: light;
-  --color-stone: #c6c7c8;
-  --color-mist: #d1d6d0;
-  --color-walnut: #80644c;
-  --color-olive: #72705c;
-  --color-clay: #b58153;
-  --color-ink: #2c2a26;
-  --color-ink-soft: #4a4741;
-  --color-border: #b5b2ab;
+  --color-stone: #e7dfd5;
+  --color-mist: #f3efe8;
+  --color-walnut: #8a6f52;
+  --color-olive: #8a7f6b;
+  --color-clay: #c99a6b;
+  --color-ink: #3a332c;
+  --color-ink-soft: #61584e;
+  --color-border: #d9cec2;
   --color-veil: rgba(43, 40, 35, 0.05);
 
-  --bg: #e7e9e5;
-  --surface: #d9dcda;
+  --bg: var(--color-mist);
+  --surface: var(--color-stone);
   --text: var(--color-ink);
   --muted: var(--color-ink-soft);
 
@@ -132,7 +132,7 @@ button:focus-visible {
 .card {
   display: block;
   background: var(--surface);
-  border: 1px solid rgba(128, 100, 76, 0.25);
+  border: 1px solid rgba(138, 111, 82, 0.25);
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   box-shadow: var(--shadow-soft), var(--shadow-inset);
@@ -142,7 +142,7 @@ button:focus-visible {
 
 .card:hover {
   transform: translateY(-2px);
-  border-color: rgba(128, 100, 76, 0.5);
+  border-color: rgba(138, 111, 82, 0.5);
   box-shadow: var(--shadow-lift), var(--shadow-inset);
 }
 
@@ -150,8 +150,8 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2xs);
-  background: rgba(181, 129, 83, 0.12);
-  border: 1px solid rgba(128, 100, 76, 0.35);
+  background: rgba(201, 154, 107, 0.12);
+  border: 1px solid rgba(138, 111, 82, 0.35);
   color: var(--color-walnut);
   padding: 6px 12px;
   border-radius: 999px;
@@ -189,13 +189,13 @@ button:focus-visible {
 .prose a {
   color: var(--color-walnut);
   text-decoration: none;
-  border-bottom: 1px solid rgba(128, 100, 76, 0.4);
+  border-bottom: 1px solid rgba(138, 111, 82, 0.4);
   padding-bottom: 1px;
 }
 
 .prose a:hover {
   color: var(--color-clay);
-  border-bottom-color: rgba(181, 129, 83, 0.7);
+  border-bottom-color: rgba(201, 154, 107, 0.7);
 }
 
 .button {
@@ -204,8 +204,8 @@ button:focus-visible {
   gap: var(--space-xs);
   padding: 10px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(128, 100, 76, 0.45);
-  background: rgba(198, 199, 200, 0.7);
+  border: 1px solid rgba(138, 111, 82, 0.45);
+  background: rgba(221, 212, 201, 0.75);
   color: var(--color-walnut);
   font-weight: 600;
   transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
@@ -213,7 +213,7 @@ button:focus-visible {
 
 .button:hover {
   transform: translateY(-1px);
-  border-color: rgba(181, 129, 83, 0.8);
+  border-color: rgba(201, 154, 107, 0.8);
   box-shadow: var(--shadow-soft);
 }
 
@@ -246,7 +246,7 @@ button:focus-visible {
 
 hr {
   border: none;
-  border-top: 1px solid rgba(128, 100, 76, 0.25);
+  border-top: 1px solid rgba(138, 111, 82, 0.25);
   margin: var(--space-xl) 0;
 }
 
@@ -256,9 +256,9 @@ hr {
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
-  border: 1px solid rgba(128, 100, 76, 0.2);
+  border: 1px solid rgba(138, 111, 82, 0.2);
   border-radius: var(--radius-lg);
-  background: rgba(217, 220, 218, 0.85);
+  background: rgba(221, 212, 201, 0.85);
   box-shadow: var(--shadow-soft);
 }
 
@@ -291,7 +291,7 @@ hr {
 .footer {
   margin-top: var(--space-3xl);
   padding-top: var(--space-xl);
-  border-top: 1px solid rgba(128, 100, 76, 0.25);
+  border-top: 1px solid rgba(138, 111, 82, 0.25);
 }
 
 .footer-inner {
@@ -327,7 +327,7 @@ hr {
 
 .footer-link:hover {
   color: var(--color-clay);
-  background: rgba(181, 129, 83, 0.12);
+  background: rgba(201, 154, 107, 0.12);
 }
 
 .icon {
