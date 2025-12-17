@@ -2,14 +2,14 @@
 
 :root {
   color-scheme: light;
-  --color-stone: #e7dfd5;
-  --color-mist: #f3efe8;
-  --color-walnut: #8a6f52;
-  --color-olive: #8a7f6b;
-  --color-clay: #c99a6b;
-  --color-ink: #3a332c;
-  --color-ink-soft: #61584e;
-  --color-border: #d9cec2;
+  --color-stone: #ead7d9;
+  --color-mist: #f6ecef;
+  --color-walnut: #8b6b6f;
+  --color-olive: #8a7c80;
+  --color-clay: #c78a8f;
+  --color-ink: #3a2f32;
+  --color-ink-soft: #625559;
+  --color-border: #dcc9cc;
   --color-veil: rgba(43, 40, 35, 0.05);
 
   --bg: var(--color-mist);

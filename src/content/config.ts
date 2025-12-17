@@ -21,4 +21,22 @@ const books = defineCollection({
   }),
 });
 
-export const collections = { thoughts, books };
+const projects = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    date: z.date(),
+    links: z
+      .array(
+        z.object({
+          label: z.string(),
+          href: z.string().url(),
+        }),
+      )
+      .optional(),
+    tags: z.array(z.string()).optional(),
+  }),
+});
+
+export const collections = { thoughts, books, projects };

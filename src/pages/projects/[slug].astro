@@ -1,0 +1,49 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const project = await getEntryBySlug('projects', slug ?? '');
+
+if (!project) {
+  throw new Error(`Project not found for slug: ${slug}`);
+}
+
+const { Content } = await project.render();
+const { data } = project;
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric' }).format(date);
+---
+
+<BaseLayout title={`${data.title} — Projects`} description={data.description}>
+  <article class="stack measure">
+    <div>
+      <h1>{data.title}</h1>
+      <p class="post-meta">Updated {formatDate(data.date)}</p>
+    </div>
+    <div class="prose">
+      <Content />
+    </div>
+    {data.links && (
+      <div class="actions">
+        {data.links.map((link) => (
+          <a class="button" href={link.href}>{link.label}</a>
+        ))}
+      </div>
+    )}
+    {data.tags && (
+      <div class="tags">
+        {data.tags.map((tag) => (
+          <span class="pill">{tag}</span>
+        ))}
+      </div>
+    )}
+  </article>
+</BaseLayout>
