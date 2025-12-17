@@ -258,7 +258,7 @@ hr {
   padding: var(--space-md) var(--space-lg);
   border: 1px solid rgba(138, 111, 82, 0.2);
   border-radius: var(--radius-lg);
-  background: rgba(221, 212, 201, 0.85);
+  background: var(--surface);
   box-shadow: var(--shadow-soft);
 }
 
@@ -339,6 +339,7 @@ hr {
 .card-title {
   color: var(--text);
 }
+
 
 .post-list {
   display: flex;
