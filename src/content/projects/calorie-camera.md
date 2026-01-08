@@ -1,7 +1,7 @@
 ---
 title: Calorie Camera
 description: A prototype for estimating calories from food photos, with plans to evolve into a full AI agent.
-date: 2025-12-27
+date: 2026-01-05
 overviewImage:
   src: /images/projects/calorie-camera/index.png
   alt: Screenshot of the Calorie Camera interface showing food detection
