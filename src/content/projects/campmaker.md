@@ -21,7 +21,7 @@ links:
 
 For the past few years, I've been a camp lead at Opulent Temple, one of Burning Man's oldest theme camps with over 300 members annually. Managing logistics for that many people in the middle of the desert, entirely volunteer-run, is equal parts operational chaos and pure magic.
 
-This year, Matias Domingues and I built a custom camp management platform to replace the pen-and-paper, ad-hoc systems we'd been juggling for years. The challenge? Coordinating 20+ volunteer core members to manage tent/RV placements with individual customizations (tent sizes, power needs, RV hookups) within limited square footage, tracking 300+ members each with 2-4 shift assignments, and handling camp support requests that were previously scattered across clipboards and word of mouth.
+This year, I built a custom camp management platform to replace the pen-and-paper, ad-hoc systems we'd been juggling for years. The challenge? Coordinating 20+ volunteer core members to manage tent/RV placements with individual customizations (tent sizes, power needs, RV hookups) within limited square footage, tracking 300+ members each with 2-4 shift assignments, and handling camp support requests that were previously scattered across clipboards and word of mouth.
 
 **The solution is a centralized management app with:**
 - **Interactive map view** – drag-and-drop placement for tents/RVs, sized to individual specifications
