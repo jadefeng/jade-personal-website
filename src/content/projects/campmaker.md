@@ -14,7 +14,7 @@ links:
   - label: Live site
     href: https://demo.playalead.com/map
   - label: GitHub
-    href: https://github.com/[your-repo]
+    href: https://github.com/matidomingues/camp-maker 
 ---
 
 ## Project Overview
