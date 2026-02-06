@@ -19,7 +19,7 @@ links:
 
 ## Project Overview
 
-For the past few years, I've been a camp lead at Opulent Temple, one of Burning Man's oldest theme camps with over 300 members annually. Managing logistics for that many people in the middle of the desert—entirely volunteer-run—is equal parts operational chaos and pure magic.
+For the past few years, I've been a camp lead at Opulent Temple, one of Burning Man's oldest theme camps with over 300 members annually. Managing logistics for that many people in the middle of the desert, entirely volunteer-run, is equal parts operational chaos and pure magic.
 
 This year, Matias Domingues and I built a custom camp management platform to replace the pen-and-paper, ad-hoc systems we'd been juggling for years. The challenge? Coordinating 20+ volunteer core members to manage tent/RV placements with individual customizations (tent sizes, power needs, RV hookups) within limited square footage, tracking 300+ members each with 2-4 shift assignments, and handling camp support requests that were previously scattered across clipboards and word of mouth.
 
@@ -39,7 +39,7 @@ Since wifi is limited on playa, we're running a local network server alongside S
 
 I built the platform using React for the frontend with an interactive drag-and-drop map interface powered by a custom grid system. The backend uses Node.js with a PostgreSQL database to handle member data, shift assignments, dwelling placements, and ticketing workflows. Authentication and permissions are managed through role-based access control so only camp leads can make critical edits.
 
-The map view was the trickiest piece—I needed to account for different tent and RV sizes, power requirements, and physical constraints from Burning Man's allocated space. I built a visual grid system where each dwelling can be dragged, resized, and configured with custom attributes. The shift management system pulls from the member database and allows leads to assign, check in, and track no-shows in real-time.
+The map view was the trickiest piece. I needed to account for different tent and RV sizes, power requirements, and physical constraints from Burning Man's allocated space. I built a visual grid system where each dwelling can be dragged, resized, and configured with custom attributes. The shift management system pulls from the member database and allows leads to assign, check in, and track no-shows in real-time.
 
 For deployment, I used Vercel for the frontend and Railway for the backend, with GitHub for version control. Since internet connectivity on playa is unreliable, I also set up a local network server that syncs with the cloud when connectivity is available but can run independently during outages.
 
