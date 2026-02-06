@@ -1,10 +1,10 @@
 ---
-title: Shepherd Learning
-description: A mobile-first safety training MVP for construction workers, focused on OSHA education, progress accountability, and multilingual access.
+title:  Learning Platform
+description: A mobile-first learning app that tracks, progress accountability, and Spanish localization.
 date: 2026-01-10
 overviewImage:
   src: /images/projects/shepherd-learning/index.png
-  alt: Screenshot of the Shepherd Learning safety training interface
+  alt: Screenshot of the Learning training interface
 tags:
   - product
   - safety
@@ -18,9 +18,7 @@ links:
     href: https://github.com/jadefeng/shepherd-learning
 ---
 ## Project Overview
-**Shepherd Learning** is a mobile-first safety training platform designed to help construction workers complete OSHA-aligned education. The project was built as a product demo for Shepherd Insurance to explore how a learning management system could complement their existing Insights and Savings products by reducing jobsite risk upstream.
-
-The MVP focuses on a narrow but high-impact use case: fixed OSHA video courses with enforced progression, lightweight assessment, and clear proof of completion. The experience is optimized for workers on-site using their phones, not administrators sitting at desks.
+**Learning App** is a mobile-first training platform designed to try and make learning from videos on YouTube more bite-sized. It grabs videos from YouTube and turns them into lessons that a learner can use from their mobile phone. 
 
 <div style="max-width: 720px; margin: 2rem auto;">
   <iframe
